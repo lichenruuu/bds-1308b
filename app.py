@@ -37,7 +37,7 @@ def index():
         pred1 = model1.predict([[rates]])
         model2 = joblib.load("tree_DBS")
         pred2 = model2.predict([[rates]])
-        return(render_template("index.html",result="temp",result2="temp"))
+        return(render_template("index.html",result=pred1,result2=pred2))
     else:
         return(render_template("index.html",result1="waiting",result2="waiting"))
 
